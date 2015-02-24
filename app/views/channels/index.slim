@@ -1,0 +1,6 @@
+h1 Channels
+
+ul
+  - Channel.all.each do |channel|
+    li=link_to channel.name, channel_path(channel)
+    / # li=link_to channel.name, "/channels/#{channel.id}"

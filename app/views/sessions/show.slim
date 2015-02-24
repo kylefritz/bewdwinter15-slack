@@ -1,0 +1,5 @@
+h2 Sign in as a User
+
+ul
+  - User.all.each do |user|
+    li= button_to user.name, create_session_path(user_id: user.id)

@@ -1,0 +1,13 @@
+h2= @channel.name
+
+ul
+  - @channel.messages.each do |msg|
+    li
+      strong> #{msg.user.try(:name)}:
+      | #{msg.content}
+
+
+= form_tag create_message_path(@channel), method: "POST" do
+  input name="content" placeholder="message content"
+
+  input type="submit" value="send"
